@@ -30,7 +30,6 @@ choco install tightvnc -y
 choco install make -y
 choco install winscp.install -y
 choco install putty.install -y
-choco install nordvpn -y
 choco install wireguard -y
 choco install parsec --params "/Shared" -y
 choco install teamviewer -y
