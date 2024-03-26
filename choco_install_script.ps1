@@ -30,30 +30,8 @@ choco install parsec --params "/Shared" -y # The /Shared argument allows connect
 choco install everything --params "/client-service /efu-association /start-menu-shortcuts /run-on-system-startup" -y # The /client-service argument installs the Everything service, the /efu-association argument associates the .efu file extension with Everything, the /start-menu-shortcuts argument creates start menu shortcuts, and the /run-on-system-startup argument runs Everything on system startup
 choco install nerd-fonts-robotomono -y
 #================================
-
 # Winget install script
-# Based on this gist: https://gist.github.com/codebytes/29bf18015f6e93fca9421df73c6e512c
-
-# Check if winget is installed and install it if it is not installed or if it is an older version
-# Based on this gist: https://gist.github.com/crutkas/6c2096eae387e544bd05cde246f23901
-$hasPackageManager = Get-AppPackage -name 'Microsoft.DesktopAppInstaller'
-if (!$hasPackageManager -or [version]$hasPackageManager.Version -lt [version]"1.10.0.0") {
-    "Installing winget Dependencies"
-    Add-AppxPackage -Path 'https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx'
-
-    $releases_url = 'https://api.github.com/repos/microsoft/winget-cli/releases/latest'
-
-    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-    $releases = Invoke-RestMethod -uri $releases_url
-    $latestRelease = $releases.assets | Where-Object { $_.browser_download_url.EndsWith('msixbundle') } | Select-Object -First 1
-
-    "Installing winget from $($latestRelease.browser_download_url)"
-    Add-AppxPackage -Path $latestRelease.browser_download_url
-}
-else {
-    "winget already installed"
-}
-
+# Must manually make sure that Winget is installed first
 
 # The list of apps to install by id
 $apps = @(
@@ -121,7 +99,9 @@ $apps = @(
 
 # Loop through the list of apps and install them
 Foreach ($app in $apps) {
-    Write-host "Installing:" $app.name
+    # This line is commented out so errors will be displayed if they occur
+    # Write-host "Installing:" $app.name
+
     # Winget documentation found at https://learn.microsoft.com/en-us/windows/package-manager/winget/install
     # --exact : Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring.
     # --silent : Runs the installer in silent mode. This suppresses all UI. The default experience shows installer progress.
