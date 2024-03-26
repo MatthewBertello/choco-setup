@@ -8,7 +8,7 @@ if (!(Test-Path -Path "$env:ProgramData\Chocolatey")) {
 }
 
 $chocoPackages = @(
-    @{ package = "chocolateygui --params=/DefaultToDarkMode=$true" },# The /DefaultToDarkMode argument sets the default theme to dark mode
+    @{ package = "chocolateygui --params= `"' /DefaultToDarkMode=$true'`"" },# The /DefaultToDarkMode argument sets the default theme to dark mode
 
     #dev
     @{ package = "dart-sdk" },
