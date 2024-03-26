@@ -7,34 +7,41 @@ if (!(Test-Path -Path "$env:ProgramData\Chocolatey")) {
     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 }
 
+$chocoPackages = @(
+    @{ package = "chocolateygui --params='/DefaultToDarkMode=$true'" },# The /DefaultToDarkMode argument sets the default theme to dark mode
+
+    #dev
+    @{ package = "dart-sdk" },
+    @{ package = "flutter" },
+    @{ package = "make" },
+    @{ package = "git.install --params '/GitAndUnixToolsOnPath'" },# The /GitAndUnixToolsOnPath argument adds git and unix tools to the system path
+    @{ package = "mingw" },
+    @{ package = "openjdk" },
+    @{ package = "visualstudio2022community" },
+    @{ package = "visualstudio2022-workload-nativedesktop" },
+    @{ package = "visualstudio2022-workload-netcrossplat" },
+    @{ package = "visualstudio2022-workload-manageddesktop" },
+
+    #misc
+    @{ package = "autodesk-fusion360" },
+    @{ package = "lycheeslicer" },
+    @{ package = "parsec --params '/Shared'" }, # The /Shared argument allows connections from the lock screen
+    @{ package = "everything --params '/client-service /efu-association /start-menu-shortcuts /run-on-system-startup'" }, # The /client-service argument installs the Everything service, the /efu-association argument associates the .efu file extension with Everything, the /start-menu-shortcuts argument creates start menu shortcuts, and the /run-on-system-startup argument runs Everything on system startup
+    @{ package = "nerd-fonts-robotomono" }
+)
+
 #Install Chocolatey packages
 #=================================
-choco install chocolateygui --params="'/DefaultToDarkMode=$true'" -y # The /DefaultToDarkMode argument sets the default theme to dark mode
+foreach ($chocoPackage in $chocoPackages) {
+    choco install $chocoPackage.package -y
+}
 
-#dev
-choco install dart-sdk -y
-choco install flutter -y
-choco install make -y
-choco install git.install --params "'/GitAndUnixToolsOnPath'" -y # The /GitAndUnixToolsOnPath argument adds git and unix tools to the system path
-choco install mingw -y
-choco install openjdk -y
-choco install visualstudio2022community -y
-choco install visualstudio2022-workload-nativedesktop -y
-choco install visualstudio2022-workload-netcrossplat -y
-choco install visualstudio2022-workload-manageddesktop -y
-
-#misc
-choco install autodesk-fusion360 -y
-choco install lycheeslicer -y
-choco install parsec --params "/Shared" -y # The /Shared argument allows connections from the lock screen
-choco install everything --params "/client-service /efu-association /start-menu-shortcuts /run-on-system-startup" -y # The /client-service argument installs the Everything service, the /efu-association argument associates the .efu file extension with Everything, the /start-menu-shortcuts argument creates start menu shortcuts, and the /run-on-system-startup argument runs Everything on system startup
-choco install nerd-fonts-robotomono -y
 #================================
 # Winget install script
 # Must manually make sure that Winget is installed first
 
 # The list of apps to install by id
-$apps = @(
+$wingetPackages = @(
     #general
     @{name = "Mozilla.Firefox" },
     @{name = "Google.Chrome" },
@@ -94,11 +101,12 @@ $apps = @(
     @{name = "KDE.Krita" },
     @{name = "JanDeDobbeleer.OhMyPosh" },
     @{name = "REALiX.HWiNFO" },
+    @{name = "9NBLGGH43VHV"; source = "msstore" }, # Samsung Notes
     @{name = "9N9WCLWDQS5J" } # Bluetooth audio receiver
 );
 
 # Loop through the list of apps and install them
-Foreach ($app in $apps) {
+Foreach ($app in $wingetPackages) {
     # This line is commented out so errors will be displayed if they occur
     # Write-host "Installing:" $app.name
 
