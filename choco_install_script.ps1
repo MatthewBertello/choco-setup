@@ -32,6 +32,9 @@ choco install parsec --params "/Shared" -y # The /Shared argument allows connect
 choco install everything --params "/client-service /efu-association /start-menu-shortcuts /run-on-system-startup" -y # The /client-service argument installs the Everything service, the /efu-association argument associates the .efu file extension with Everything, the /start-menu-shortcuts argument creates start menu shortcuts, and the /run-on-system-startup argument runs Everything on system startup
 choco install nerd-fonts-robotomono -y
 
+#desktop only
+choco install samsung-magician -y
+
 #================================
 # Winget install script
 # Must manually make sure that Winget is installed first
@@ -79,7 +82,6 @@ $wingetPackages = @(
     #desktop only
     @{name = "Nvidia.GeForceExperience" },
     @{name = "SteelSeries.GG" },
-    @{name = "Samsung.SamsungMagician" },
     
     #misc
     @{name = "Prusa3D.PrusaSlicer" },
