@@ -87,6 +87,7 @@ $apps = @(
     @{name = "ArduinoSA.IDE.stable" },
     @{name = "Docker.DockerDesktop" },
     @{name = "GitHub.cli" },
+    @{name = "9PGCV4V3BK4W"; source = "msstore" }, # DevToys
 
     #games
     @{name = "Valve.Steam" },
@@ -114,6 +115,7 @@ $apps = @(
     @{name = "GIMP.GIMP" },
     @{name = "KDE.Krita" },
     @{name = "JanDeDobbeleer.OhMyPosh" },
+    @{name = "REALiX.HWiNFO" },
     @{name = "9N9WCLWDQS5J" } # Bluetooth audio receiver
 );
 
