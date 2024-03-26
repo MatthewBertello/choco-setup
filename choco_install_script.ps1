@@ -32,6 +32,9 @@ choco install parsec --params "/Shared" -y # The /Shared argument allows connect
 choco install everything --params "/client-service /efu-association /start-menu-shortcuts /run-on-system-startup" -y # The /client-service argument installs the Everything service, the /efu-association argument associates the .efu file extension with Everything, the /start-menu-shortcuts argument creates start menu shortcuts, and the /run-on-system-startup argument runs Everything on system startup
 choco install nerd-fonts-robotomono -y
 
+#games
+choco install osu -y
+
 #desktop only
 choco install samsung-magician -y
 
@@ -75,7 +78,6 @@ $wingetPackages = @(
     #games
     @{name = "Valve.Steam" },
     @{name = "RiotGames.LeagueOfLegends.NA" },
-    @{name = "Peppy.Osu!" },
     @{name = "NexusMods.Vortex" },
     @{name = "EpicGames.EpicGamesLauncher" },
     
