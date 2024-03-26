@@ -14,7 +14,7 @@ $chocoPackages = @(
     @{ package = "dart-sdk" },
     @{ package = "flutter" },
     @{ package = "make" },
-    @{ package = "git.install --params /GitAndUnixToolsOnPath" },# The /GitAndUnixToolsOnPath argument adds git and unix tools to the system path
+    @{ package = "git.install --params=`"' /GitAndUnixToolsOnPath'`"" },# The /GitAndUnixToolsOnPath argument adds git and unix tools to the system path
     @{ package = "mingw" },
     @{ package = "openjdk" },
     @{ package = "visualstudio2022community" },
@@ -25,8 +25,8 @@ $chocoPackages = @(
     #misc
     @{ package = "autodesk-fusion360" },
     @{ package = "lycheeslicer" },
-    @{ package = "parsec --params /Shared" }, # The /Shared argument allows connections from the lock screen
-    @{ package = "everything --params /client-service /efu-association /start-menu-shortcuts /run-on-system-startup" }, # The /client-service argument installs the Everything service, the /efu-association argument associates the .efu file extension with Everything, the /start-menu-shortcuts argument creates start menu shortcuts, and the /run-on-system-startup argument runs Everything on system startup
+    @{ package = "parsec --params=`"' /Shared'`"" }, # The /Shared argument allows connections from the lock screen
+    @{ package = "everything --params=`"' /client-service /efu-association /start-menu-shortcuts /run-on-system-startup'`"" }, # The /client-service argument installs the Everything service, the /efu-association argument associates the .efu file extension with Everything, the /start-menu-shortcuts argument creates start menu shortcuts, and the /run-on-system-startup argument runs Everything on system startup
     @{ package = "nerd-fonts-robotomono" }
 )
 
