@@ -1,6 +1,8 @@
-# Chocolatey install script
+# Windows setup script
 
 Set-ExecutionPolicy Bypass -Scope Process -Force
+
+# Chocolatey setup script
 
 # Install Chocolatey if it is not already installed
 if (!(Test-Path -Path "$env:ProgramData\Chocolatey")) {
