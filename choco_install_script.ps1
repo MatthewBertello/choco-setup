@@ -51,9 +51,6 @@ $wingetPackages = @(
     #desktop only
     @{name = "Nvidia.GeForceExperience" },
     @{name = "SteelSeries.GG" },
-
-    #school/work
-    @{name = "Microsoft.Teams" }, # Teams, only works for a school/work account
     
     #misc
     @{name = "Prusa3D.PrusaSlicer" },
