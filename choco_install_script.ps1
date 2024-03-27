@@ -51,6 +51,9 @@ $wingetPackages = @(
     #desktop only
     @{name = "Nvidia.GeForceExperience" },
     @{name = "SteelSeries.GG" },
+
+    #school/work
+    @{name = "Microsoft.Teams" }, # Teams, only works for a school/work account
     
     #misc
     @{name = "Prusa3D.PrusaSlicer" },
@@ -115,7 +118,6 @@ choco install nerd-fonts-robotomono -y
 choco install autodesk-fusion360 -y
 
 #dev
-choco install git.install -y
 choco install make -y
 choco install mingw -y
 choco install openjdk -y
