@@ -15,7 +15,6 @@ choco install chocolateygui --params="'/DefaultToDarkMode=$true'" -y # The /Defa
 
 #dev
 choco install make -y
-choco install git.install --params "'/GitAndUnixToolsOnPath'" -y # The /GitAndUnixToolsOnPath argument adds git and unix tools to the system path
 choco install mingw -y
 choco install openjdk -y
 choco install visualstudio2022community -y
