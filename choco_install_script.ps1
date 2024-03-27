@@ -38,6 +38,12 @@ choco install samsung-magician -y
 # Winget install script
 # Must manually make sure that Winget is installed first
 
+# Manually installed winget packages
+#dev
+winget install Microsoft.VisualStudioCode --exact --silent --accept-package-agreements --override '/SILENT /mergetasks="!runcode,addcontextmenufiles,addcontextmenufolders"' # install vscode while adding it to the context menu
+
+# Other winget packages
+
 # The list of apps to install by id
 $wingetPackages = @(
     #general
@@ -55,8 +61,7 @@ $wingetPackages = @(
     @{name = "Google.QuickShare" },
 
     #dev
-    @{name = "Notepad++.Notepad++" }, 
-    @{name = "Microsoft.VisualStudioCode" },
+    @{name = "Notepad++.Notepad++" },
     @{name = "Mozilla.Firefox.DeveloperEdition" },
     @{name = "python3" },
     @{name = "Axosoft.GitKraken" },
