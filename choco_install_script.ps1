@@ -49,7 +49,6 @@ $wingetPackages = @(
     @{name = "Microsoft.WindowsTerminal" },
     @{name = "9MSMLRH6LZF3"; source = "msstore" }, # Windows notepad
     @{name = "NordSecurity.NordVPN" },
-    @{name = "9WZDNCRD29V9" }, # Microsoft 365 (Office)
     @{name = "Google.QuickShare" },
 
     #dev
