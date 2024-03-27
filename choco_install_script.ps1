@@ -50,7 +50,7 @@ $wingetPackages = @(
     @{name = "Bitwarden.Bitwarden" },
     @{name = "Discord.Discord" },
     @{name = "VideoLAN.VLC" },
-    @{name = "Microsoft.Teams" },
+    @{name = "XP8BT8DW290MPQ"; source = "msstore" },
     @{name = "Zoom.Zoom" },
     @{name = "7zip.7zip" },
     @{name = "Microsoft.PowerToys" },
@@ -102,7 +102,7 @@ $wingetPackages = @(
     @{name = "REALiX.HWiNFO" },
     @{name = "9NBLGGH43VHV"; source = "msstore" }, # Samsung Notes
     @{name = "UnifiedIntents.UnifiedRemote" },
-    @{name = "9N9WCLWDQS5J" } # Bluetooth audio receiver
+    @{name = "9N9WCLWDQS5J"; source = "msstore" } # Bluetooth audio receiver
 );
 
 # Loop through the list of apps and install them
