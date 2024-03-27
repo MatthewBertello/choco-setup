@@ -2,37 +2,6 @@
 
 Set-ExecutionPolicy Bypass -Scope Process -Force
 
-# Chocolatey setup script
-
-# Install Chocolatey if it is not already installed
-if (!(Test-Path -Path "$env:ProgramData\Chocolatey")) {
-    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-}
-
-#Install Chocolatey packages
-#=================================
-choco install chocolateygui --params="'/DefaultToDarkMode=$true'" -y # The /DefaultToDarkMode argument sets the default theme to dark mode
-
-#dev
-choco install make -y
-choco install mingw -y
-choco install openjdk -y
-choco install visualstudio2022community -y
-choco install visualstudio2022-workload-nativedesktop -y
-choco install visualstudio2022-workload-netcrossplat -y
-choco install visualstudio2022-workload-manageddesktop -y
-
-#misc
-choco install autodesk-fusion360 -y
-choco install lycheeslicer -y
-choco install parsec --params "/Shared" -y # The /Shared argument allows connections from the lock screen
-choco install everything --params "/client-service /efu-association /start-menu-shortcuts /run-on-system-startup" -y # The /client-service argument installs the Everything service, the /efu-association argument associates the .efu file extension with Everything, the /start-menu-shortcuts argument creates start menu shortcuts, and the /run-on-system-startup argument runs Everything on system startup
-choco install nerd-fonts-robotomono -y
-
-#desktop only
-choco install samsung-magician -y
-
-#================================
 # Winget install script
 # Must manually make sure that Winget is installed first
 
@@ -121,6 +90,41 @@ Foreach ($app in $wingetPackages) {
         winget install --exact --silent $app.name --accept-package-agreements
     }
 }
+
+#================================
+
+# Chocolatey setup script
+
+# Install Chocolatey if it is not already installed
+if (!(Test-Path -Path "$env:ProgramData\Chocolatey")) {
+    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+}
+
+#Install Chocolatey packages
+#=================================
+choco install chocolateygui --params="'/DefaultToDarkMode=$true'" -y # The /DefaultToDarkMode argument sets the default theme to dark mode
+
+#desktop only
+choco install samsung-magician -y
+
+#misc
+choco install lycheeslicer -y
+choco install parsec --params "/Shared" -y # The /Shared argument allows connections from the lock screen
+choco install everything --params "/client-service /efu-association /start-menu-shortcuts /run-on-system-startup" -y # The /client-service argument installs the Everything service, the /efu-association argument associates the .efu file extension with Everything, the /start-menu-shortcuts argument creates start menu shortcuts, and the /run-on-system-startup argument runs Everything on system startup
+choco install nerd-fonts-robotomono -y
+choco install autodesk-fusion360 -y
+
+#dev
+choco install git.install -y
+choco install make -y
+choco install mingw -y
+choco install openjdk -y
+choco install visualstudio2022community -y
+choco install visualstudio2022-workload-nativedesktop -y
+choco install visualstudio2022-workload-netcrossplat -y
+choco install visualstudio2022-workload-manageddesktop -y
+
+#================================
 
 # Install Windows Subsystem for Linux
 wsl --install
