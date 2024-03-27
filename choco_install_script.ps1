@@ -96,7 +96,6 @@ $wingetPackages = @(
     @{name = "KDE.Krita" },
     @{name = "JanDeDobbeleer.OhMyPosh" },
     @{name = "REALiX.HWiNFO" },
-    @{name = "9NBLGGH43VHV"; source = "msstore" }, # Samsung Notes
     @{name = "UnifiedIntents.UnifiedRemote" },
     @{name = "9N9WCLWDQS5J"; source = "msstore" } # Bluetooth audio receiver
 );
