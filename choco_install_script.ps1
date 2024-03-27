@@ -14,7 +14,7 @@ if (!(Test-Path -Path "$env:ProgramData\Chocolatey")) {
 choco install chocolateygui --params="'/DefaultToDarkMode=$true'" -y # The /DefaultToDarkMode argument sets the default theme to dark mode
 
 #dev
-choco install flutter -y
+choco install git.install -y
 choco install make -y
 choco install git.install --params "'/GitAndUnixToolsOnPath'" -y # The /GitAndUnixToolsOnPath argument adds git and unix tools to the system path
 choco install mingw -y
