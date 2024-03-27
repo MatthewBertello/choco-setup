@@ -50,7 +50,6 @@ $wingetPackages = @(
     @{name = "Bitwarden.Bitwarden" },
     @{name = "Discord.Discord" },
     @{name = "VideoLAN.VLC" },
-    @{name = "XP8BT8DW290MPQ"; source = "msstore" },
     @{name = "Zoom.Zoom" },
     @{name = "7zip.7zip" },
     @{name = "Microsoft.PowerToys" },
