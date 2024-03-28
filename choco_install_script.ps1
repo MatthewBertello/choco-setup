@@ -31,6 +31,8 @@ $wingetPackages = @(
     @{name = "Notepad++.Notepad++" },
     @{name = "Mozilla.Firefox.DeveloperEdition" },
     @{name = "python3" },
+    @{name = "Microsoft.PowerShell" },
+    @{name = "JanDeDobbeleer.OhMyPosh" },
     @{name = "Axosoft.GitKraken" },
     @{name = "GitHub.GitHubDesktop" },
     @{name = "PuTTY.PuTTY" },
@@ -65,7 +67,6 @@ $wingetPackages = @(
     @{name = "AntibodySoftware.WizTree" },
     @{name = "GIMP.GIMP" },
     @{name = "KDE.Krita" },
-    @{name = "JanDeDobbeleer.OhMyPosh" },
     @{name = "REALiX.HWiNFO" },
     @{name = "UnifiedIntents.UnifiedRemote" },
     @{name = "9N9WCLWDQS5J"; source = "msstore" } # Bluetooth audio receiver
