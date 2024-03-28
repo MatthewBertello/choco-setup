@@ -118,6 +118,7 @@ choco install autodesk-fusion360 -y
 #dev
 choco install make -y
 choco install mingw -y
+choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System' -y
 choco install openjdk -y
 choco install visualstudio2022community -y
 choco install visualstudio2022-workload-nativedesktop -y
