@@ -30,7 +30,6 @@ $wingetPackages = @(
     #dev
     @{name = "Notepad++.Notepad++" },
     @{name = "Mozilla.Firefox.DeveloperEdition" },
-    @{name = "python3" },
     @{name = "Microsoft.PowerShell" },
     @{name = "JanDeDobbeleer.OhMyPosh" },
     @{name = "Axosoft.GitKraken" },
