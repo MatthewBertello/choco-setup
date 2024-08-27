@@ -43,6 +43,7 @@ $wingetPackages = @(
     @{name = "Docker.DockerDesktop" },
     @{name = "GitHub.cli" },
     @{name = "9PGCV4V3BK4W"; source = "msstore" }, # DevToys
+    @{name = "Nvidia.CUDA" },
 
     #games
     @{name = "Valve.Steam" },
