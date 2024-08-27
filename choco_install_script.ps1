@@ -44,6 +44,7 @@ $wingetPackages = @(
     @{name = "GitHub.cli" },
     @{name = "9PGCV4V3BK4W"; source = "msstore" }, # DevToys
     @{name = "Nvidia.CUDA" },
+    @{name = "Anaconda.Anaconda3" },
 
     #games
     @{name = "Valve.Steam" },
